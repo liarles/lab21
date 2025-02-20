@@ -1,4 +1,4 @@
-#include <windows.h>    
+#include <windows.h>
 #include <stdio.h>
 
 HWND firstnum, secondnum;
@@ -6,7 +6,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) 
     switch(Message) {
         case WM_CREATE: {
             HWND textfield, button1, button2, button3, button4;
-            
+           
             textfield = CreateWindow("STATIC", "Please input two numbers", WS_VISIBLE | WS_CHILD,
                                      15, 20, 200, 30, hwnd, NULL, NULL, NULL);
 
@@ -78,7 +78,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     wc.lpfnWndProc = WndProc;
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-    wc.hbrBackground = CreateSolidBrush(RGB(173, 216, 230)); // สีฟ้า    wc.lpszClassName = "WindowClass";
+    wc.hbrBackground = CreateSolidBrush(RGB(0, 0, 255));
+    wc.lpszClassName = "WindowClass";
     wc.hIcon = LoadIcon(NULL, IDI_APPLICATION);
     wc.hIconSm = LoadIcon(NULL, IDI_APPLICATION);
 
@@ -101,3 +102,4 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
     return msg.wParam;
 }
+
